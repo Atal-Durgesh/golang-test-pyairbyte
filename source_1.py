@@ -7,7 +7,7 @@ source = ab.get_source(
     config={
         "repositories": ["Atal-Durgesh/SpringSecurity"],
         "credentials": {
-            "personal_access_token": "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",
+            "personal_access_token": ab.get_secret("GITHUB_PERSONAL_ACCESS_TOKEN"),
         },
     },
 )
