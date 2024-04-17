@@ -5,9 +5,9 @@ source = ab.get_source(
     "source-github",
     install_if_missing=True,
     config={
-        "repositories": ["Atal-Durgesh/SpringSecurity"],
+        "repositories": ["Atal-Durgesh/golang-test-pyairbyte"],
         "credentials": {
-            "personal_access_token": ab.get_secret("GITHUB_PERSONAL_ACCESS_TOKEN"),
+            "personal_access_token": "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",
         },
     },
 )
