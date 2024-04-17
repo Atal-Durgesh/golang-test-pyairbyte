@@ -5,9 +5,9 @@ source = ab.get_source(
     "source-github",
     install_if_missing=True,
     config={
-        "repositories": ["Atal-Durgesh/SpringSecurity"],
+        "repositories": ["Atal-Durgesh/golang-test-pyairbyte"],
         "credentials": {
-            "personal_access_token": "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",
+            "personal_access_token": "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",
         },
     },
 )
@@ -16,5 +16,8 @@ source = ab.get_source(
 source.check()
 source.get_available_streams()
 source.select_streams(["pull_requests"])
-result = source.read()
-print(result.streams().items())
+cache = ab.get_default_cache()
+result = source.read(cache=cache,force_full_refresh=True)
+prs=cache["pull_requests"].to_pandas()
+prs.head(1)
+print(prs)
